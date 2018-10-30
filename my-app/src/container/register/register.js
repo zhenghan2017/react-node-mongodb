@@ -22,18 +22,18 @@ class Register extends Component {
     };
     this.registerHandle = this.registerHandle.bind(this);
     this.toLogin = this.toLogin.bind(this);
-    this.keyDownHandle = this.keyDownHandle.bind(this);
+    // this.keyDownHandle = this.keyDownHandle.bind(this);
   }
 
   componentDidMount() {
     window.addEventListener('keydown', this.keyDownHandle);
   }
 
-  keyDownHandle(e) {
-    if (e && e.keyCode === 13) {
-      this.registerHandle();
-    }
-  }
+  // keyDownHandle(e) {
+  //   if (e && e.keyCode === 13) {
+  //     this.registerHandle();
+  //   }
+  // }
 
   changeHandle(key, val) {
     this.setState({

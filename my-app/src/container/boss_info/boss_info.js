@@ -23,9 +23,6 @@ class BossInfo extends Component {
   }
 
   changeHandle(key, val) {
-    if (key === 'describe') {
-      val = val.replace('\n', '');
-    }
     this.setState({
       [key]: val
     });

@@ -1,7 +1,12 @@
 import React, { Component } from 'react';
-import { Grid } from 'antd-mobile';
+import { Grid, List } from 'antd-mobile';
+import PropTypes from 'prop-types';
 
 class AvaterSelector extends Component {
+  static propTypes = {
+    getAvater: PropTypes.func
+  }
+
   constructor(props) {
     super(props);
     this.state = {
@@ -13,7 +18,7 @@ class AvaterSelector extends Component {
 
   render() {
     const avaterList = ['1', '2', '3', '4', '5', '6'].map(v => ({
-      icon: require(`../../../public/img/avater/${v}.png`),
+      icon: require(`./img/${v}.png`),
       text: v
     }));
     const currentAvater = this.state.icon
@@ -21,10 +26,10 @@ class AvaterSelector extends Component {
         <span>请选择头像：</span>
         <img src={this.state.icon} alt={this.state.text}></img>
       </div>
-      : '请选择头像：'
+      : <div>请选择头像：</div>
     return (
       <div>
-        {currentAvater}
+        <List renderHeader={() => currentAvater}></List>
         <Grid
           data={avaterList}
           columnNum={3}

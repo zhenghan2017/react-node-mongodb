@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class IndexBoss extends Component {
+class Boss extends Component {
   render() {
     return (
       <h1>boss页面</h1>
@@ -8,4 +8,4 @@ class IndexBoss extends Component {
   }
 };
 
-export default IndexBoss;
+export default Boss;

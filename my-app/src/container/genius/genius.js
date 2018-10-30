@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class IndexGenius extends Component {
+class Genius extends Component {
   render() {
     return (
       <h1>牛人页面</h1>
@@ -8,4 +8,4 @@ class IndexGenius extends Component {
   }
 };
 
-export default IndexGenius;
+export default Genius;

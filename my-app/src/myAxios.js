@@ -16,8 +16,8 @@ export default function myAxios(method, url, data) {
           return Promise.reject('break');
         }
         case 2: {
-          // window.location.href = '/login';
-          return Promise.reject('break');
+          return window.location.href = '/login';
+          // return Promise.reject('break');
         }
         default: return res;
       }
@@ -35,7 +35,7 @@ export default function myAxios(method, url, data) {
             window.location.href = '/error'
             break;
           }
-          default: null
+          default: window.location.href = '/'
         }
         return new Promise(() => { });
       } else if (err && err === 'break') {

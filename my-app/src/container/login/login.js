@@ -19,22 +19,22 @@ class Login extends Component {
     };
     this.toRegister = this.toRegister.bind(this);
     this.loginHandle = this.loginHandle.bind(this);
-    this.keyDownHandle = this.keyDownHandle.bind(this);
+    // this.keyDownHandle = this.keyDownHandle.bind(this);
   }
 
   componentDidMount() {
-    window.addEventListener('keydown', this.keyDownHandle);
+    // window.addEventListener('keydown', this.keyDownHandle);
   }
 
   componentWillUnmount() {
-    window.removeEventListener('keydown', this.keyDownHandle);
+    // window.removeEventListener('keydown', this.keyDownHandle);
   }
 
-  keyDownHandle(e) {
-    if (e && e.keyCode === 13) {
-      this.loginHandle();
-    }
-  }
+  // keyDownHandle(e) {
+  //   if (e && e.keyCode === 13) {
+  //     this.loginHandle();
+  //   }
+  // }
 
   toRegister() {
     this.props.history.push('/register');
