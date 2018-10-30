@@ -18,28 +18,28 @@ import BossInfo from './container/boss_info/boss_info';
 import GeniusInfo from './container/genius_info/genius_info';
 
 const store = createStore(reducers, compose(
-    applyMiddleware(thunk),
-    window.devToolsExtension ? window.devToolsExtension() : f => f
+  applyMiddleware(thunk),
+  window.devToolsExtension ? window.devToolsExtension() : f => f
 ));
 
 ReactDom.render(
-    (<Provider store={store}>
-        <BrowserRouter>
-            <div>
-                {/* <AuthAccess></AuthAccess> */}
-                <Switch>
-                    <Route path="/notFound" component={NotFound}></Route>
-                    <Route path="/error" component={Error}></Route>
-                    <Route path="/login" component={Login}></Route>
-                    <Route path="/register" component={Register}></Route>
-                    <Route path="/boss" component={IndexBoss}></Route>
-                    <Route path="/genius" component={IndexGenius}></Route>
-                    <Route path="/bossInfo" component={BossInfo}></Route>
-                    <Route path="/geniusInfo" component={GeniusInfo}></Route>
-                    <Route component={Login} />
-                </Switch>
-            </div>
-        </BrowserRouter>
-    </Provider>),
-    document.getElementById('root')
+  (<Provider store={store}>
+    <BrowserRouter>
+      <div>
+        {/* <AuthAccess></AuthAccess> */}
+        <Switch>
+          <Route path="/notFound" component={NotFound}></Route>
+          <Route path="/error" component={Error}></Route>
+          <Route path="/login" component={Login}></Route>
+          <Route path="/register" component={Register}></Route>
+          <Route path="/boss" component={IndexBoss}></Route>
+          <Route path="/genius" component={IndexGenius}></Route>
+          <Route path="/bossInfo" component={BossInfo}></Route>
+          <Route path="/geniusInfo" component={GeniusInfo}></Route>
+          <Route component={Login} />
+        </Switch>
+      </div>
+    </BrowserRouter>
+  </Provider>),
+  document.getElementById('root')
 );
