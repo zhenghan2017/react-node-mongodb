@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { NavBar } from 'antd-mobile';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Switch, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 import Boss from '../../container/boss/boss';
 import Genius from '../../container/genius/genius';
@@ -21,7 +21,7 @@ class DashBoard extends Component {
   render() {
     const { pathname } = this.props.location;
     const user = this.props.user;
-    const navList = [{
+    let navList = [{
       path: '/boss',
       title: '牛人列表',
       icon: 'genius',
@@ -47,6 +47,16 @@ class DashBoard extends Component {
     return (
       <div>
         <NavBar mode="dark">{navList.find(v => v.path === pathname).title}</NavBar>
+        <div>
+          <Switch>
+            {
+              navList.map(v => (
+                <Route key={v.path} path={v.path} component={v.component}></Route>
+              ))
+            }
+          </Switch>
+        </div>
+
         <NavLinkBar navList={navList}></NavLinkBar>
       </div>
     );

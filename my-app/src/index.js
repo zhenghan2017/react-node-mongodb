@@ -13,7 +13,7 @@ import Boss from './container/boss/boss';
 import Genius from './container/genius/genius';
 import NotFound from './container/not_found/not_found';
 import Error from './container/error/error';
-import AuthAccess from './component/auth_access/auth_access';
+// import AuthAccess from './component/auth_access/auth_access';
 import BossInfo from './container/boss_info/boss_info';
 import GeniusInfo from './container/genius_info/genius_info';
 import DashBoard from './component/dashboard/dashboard';
@@ -27,7 +27,7 @@ ReactDom.render(
   (<Provider store={store}>
     <BrowserRouter>
       <div>
-        <AuthAccess></AuthAccess>
+        {/* <AuthAccess></AuthAccess> */}
         <Switch>
           <Route path="/notFound" component={NotFound}></Route>
           <Route path="/error" component={Error}></Route>

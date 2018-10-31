@@ -26,7 +26,7 @@ class Register extends Component {
   }
 
   componentDidMount() {
-    window.addEventListener('keydown', this.keyDownHandle);
+    // window.addEventListener('keydown', this.keyDownHandle);
   }
 
   // keyDownHandle(e) {
@@ -66,11 +66,11 @@ class Register extends Component {
           <WhiteSpace />
           <RadioItem onChange={() => this.changeHandle('type', 'genius')} checked={this.state.type === "genius"}>
             牛人
-                    </RadioItem>
+          </RadioItem>
           <WhiteSpace />
           <RadioItem onChange={() => this.changeHandle('type', 'boss')} checked={this.state.type === "boss"}>
             Boss
-                    </RadioItem>
+          </RadioItem>
         </List>
         <WhiteSpace />
         <Button type="primary" onClick={this.registerHandle}>注册</Button>

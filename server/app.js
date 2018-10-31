@@ -21,7 +21,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(function (req, res, next) {
   const reqUrl = req.originalUrl;
-  const publicUrl = ['/login', '/register'];
+  const publicUrl = ['/login', '/users/register'];
   if (publicUrl.indexOf(reqUrl) === -1) {
     const { userId } = req.cookies;
     if (!userId) {

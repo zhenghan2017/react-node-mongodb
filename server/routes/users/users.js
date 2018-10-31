@@ -15,8 +15,9 @@ router.route('/')
     //     options.name = req.query.name;
     // }
     // User.remove({}, function (e, d) {});
-    const { userId } = req.cookies;
-    User.findOne({ _id: userId }, _filter)
+    // const { userId } = req.cookies;
+    const { type } = req.query;
+    User.find({type}, _filter)
       .then(function (doc) {
         res.json({ code: 0, results: doc });
       })

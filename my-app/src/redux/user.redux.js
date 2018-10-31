@@ -49,8 +49,8 @@ export function register({ account, pwd, title, repeatPwd, type }) {
   const url = '/users/register';
   const params = { account, pwd, title, type };
   return dispatch => myAxios('post', url, params)
-    .then(function (res) {
-      dispatch(autoHandle(res.data.results));
+    .then(reply => {
+      dispatch(autoHandle(reply.data.results));
     })
 }
 
@@ -61,8 +61,8 @@ export function login({ account, pwd }) {
   const url = '/login';
   const params = { account, pwd };
   return dispatch => myAxios('post', url, params)
-    .then(function (res) {
-      dispatch(autoHandle(res.data.results));
+    .then(reply => {
+      dispatch(autoHandle(reply.data.results));
     })
 }
 
@@ -70,8 +70,8 @@ export function complete(userInfo) {
   const url = '/users';
   const params = userInfo;
   return dispatch => myAxios('patch', url, params)
-    .then(res => {
-      dispatch(autoHandle(res.data.results));
+    .then(reply => {
+      dispatch(autoHandle(reply.data.results));
     });
 }
 

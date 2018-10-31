@@ -17,7 +17,11 @@ class AvaterSelector extends Component {
 
 
   render() {
-    const avaterList = ['1', '2', '3', '4', '5', '6'].map(v => ({
+    const avaterList = [
+      'boy-1', 'boy-2', 'boy-3', 'boy-4', 
+      'girl-1', 'girl-2', 'girl-3', 'girl-4',
+      'dog-1', 'dog-2', 'cat-1', 'cat-2'
+    ].map(v => ({
       icon: require(`./img/${v}.png`),
       text: v
     }));
@@ -32,7 +36,7 @@ class AvaterSelector extends Component {
         <List renderHeader={() => currentAvater}></List>
         <Grid
           data={avaterList}
-          columnNum={3}
+          columnNum={4}
           onClick={
             el => {
               this.setState({

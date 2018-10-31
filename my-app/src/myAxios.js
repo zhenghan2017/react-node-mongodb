@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { Toast } from 'antd-mobile';
 
-export default function myAxios(method, url, data) {
+export default function myAxios(method, url, data = {}) {
   const options = {
     method: method,
     url: url,

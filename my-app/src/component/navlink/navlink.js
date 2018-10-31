@@ -7,7 +7,8 @@ import './navlink.css';
 class NavLinkBar extends Component {
   render() {
     const { pathname } = this.props.location;
-    const navList = this.props.navList.filter(v => !v.hide)
+    const navList = this.props.navList.filter(v => !v.hide);
+    console.log(navList);
     return (
       <div>
         <TabBar className='am-tab-bar'>

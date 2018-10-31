@@ -1,11 +1,21 @@
 import React, { Component } from 'react';
+import {connect} from 'react-redux';
+import {getCharList} from '../../redux/chatlist.redux';
+import UserCard from '../../component/usercard/usercard';
 
-class Genius extends Component {
+@connect(
+  state => state.charList,
+  {getCharList}
+)
+class Boss extends Component {
+
+  componentDidMount() {
+    this.props.getCharList('boss');
+  }
+
   render() {
-    return (
-      <h1>牛人页面</h1>
-    );
+    return <UserCard userList={this.props.userList}></UserCard>
   }
 };
 
-export default Genius;
+export default Boss;
