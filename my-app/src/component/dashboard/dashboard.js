@@ -7,7 +7,7 @@ import Genius from '../../container/genius/genius';
 import Msg from '../../container/msg/msg';
 import Self from '../../container/self/self';
 import NavLinkBar from '../navlink/navlink';
-
+import PropTypes from 'prop-types';
 @withRouter
 @connect(
   state => state,
@@ -62,5 +62,9 @@ class DashBoard extends Component {
     );
   }
 }
+
+DashBoard.propTypes = {
+  user: PropTypes.object,
+};
 
 export default DashBoard;

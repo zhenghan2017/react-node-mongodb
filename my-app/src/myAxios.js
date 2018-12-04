@@ -16,7 +16,7 @@ export default function myAxios(method, url, data = {}) {
           return Promise.reject('break');
         }
         case 2: {
-          return window.location.href = '/login';
+          return window.location.href = '/';
           // return Promise.reject('break');
         }
         default: return res;

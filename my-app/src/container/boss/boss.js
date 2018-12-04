@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import {getCharList} from '../../redux/chatlist.redux';
+import PropTypes from 'prop-types';
 import UserCard from '../../component/usercard/usercard';
 
 @connect(
@@ -16,6 +17,10 @@ class Boss extends Component {
   render() {
     return <UserCard userList={this.props.userList}></UserCard>
   }
+};
+
+Boss.propTypes = {
+  userList: PropTypes.array
 };
 
 export default Boss;

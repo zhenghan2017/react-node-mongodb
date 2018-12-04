@@ -20,7 +20,7 @@ import DashBoard from './component/dashboard/dashboard';
 
 const store = createStore(reducers, compose(
   applyMiddleware(thunk),
-  window.devToolsExtension ? window.devToolsExtension() : f => f
+  window.__REDUX_DEVTOOLS_EXTENSION__ ? window.__REDUX_DEVTOOLS_EXTENSION__() : f => f
 ));
 
 ReactDom.render(
@@ -31,7 +31,7 @@ ReactDom.render(
         <Switch>
           <Route path="/notFound" component={NotFound}></Route>
           <Route path="/error" component={Error}></Route>
-          <Route path="/login" component={Login}></Route>
+          <Route exact path="/" component={Login}></Route>
           <Route path="/register" component={Register}></Route>
           {/* <Route path="/boss" component={Boss}></Route> */}
           {/* <Route path="/genius" component={Genius}></Route> */}

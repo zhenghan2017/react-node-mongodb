@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import {getCharList} from '../../redux/chatlist.redux';
+import PropTypes from 'prop-types';
 import UserCard from '../../component/usercard/usercard';
 
 @connect(
   state => state.charList,
   {getCharList}
 )
-class Boss extends Component {
+class Genius extends Component {
 
   componentDidMount() {
     this.props.getCharList('boss');
@@ -18,4 +19,8 @@ class Boss extends Component {
   }
 };
 
-export default Boss;
+Genius.propTypes = {
+  userList: PropTypes.array
+};
+
+export default Genius;

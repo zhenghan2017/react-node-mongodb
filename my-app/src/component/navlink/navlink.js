@@ -2,13 +2,12 @@ import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import { TabBar } from 'antd-mobile';
 import './navlink.css';
-
+import PropTypes from 'prop-types';
 @withRouter
 class NavLinkBar extends Component {
   render() {
     const { pathname } = this.props.location;
     const navList = this.props.navList.filter(v => !v.hide);
-    console.log(navList);
     return (
       <div>
         <TabBar className='am-tab-bar'>
@@ -35,5 +34,9 @@ class NavLinkBar extends Component {
     );
   }
 }
+
+NavLinkBar.propTypes = {
+  navList: PropTypes.array
+};
 
 export default NavLinkBar;

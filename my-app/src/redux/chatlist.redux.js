@@ -26,6 +26,9 @@ export function getCharList(type) {
   return dispatch => myAxios('get', url)
     .then(reply => {
       dispatch(userList(reply.data.results));
-    });
+    })
+    .catch(err => {
+      console.log(err);
+    })
 }
 

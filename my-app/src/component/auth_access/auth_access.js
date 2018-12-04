@@ -10,6 +10,8 @@ import { loadData } from '../../redux/user.redux';
   { loadData }
 )
 class AuthAccess extends Component {
+  // 判断是否登录
+  // 进行简单的跳转
   componentDidMount() {
     const publicPath = ['/register', '/login'];
     const currentPath = this.props.location.pathname;
@@ -17,9 +19,8 @@ class AuthAccess extends Component {
       return null;
     }
     const urlPath = '/users';
-    myAxios('get', urlPath, {})
-        .then(reply => {})
-
+    myAxios('get', urlPath)
+        .then(reply => {});
   }
   render() {
     return null;

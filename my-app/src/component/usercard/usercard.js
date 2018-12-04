@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Card, WhiteSpace } from 'antd-mobile';
-
+import PropTypes from 'prop-types';
 class UserCard extends Component {
   render() {
     const Header = Card.Header;
@@ -11,7 +11,7 @@ class UserCard extends Component {
           this.props.userList.map(v => (
             v.avater
               ? (
-                <div>
+                <div key={v._id}>
                   <Card key={v._id}>
                     <Header
                       key={v._id}
@@ -39,5 +39,9 @@ class UserCard extends Component {
     );
   }
 }
+
+UserCard.propTypes = {
+  userList: PropTypes.array
+};
 
 export default UserCard;

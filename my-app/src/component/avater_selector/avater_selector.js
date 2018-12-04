@@ -3,9 +3,6 @@ import { Grid, List } from 'antd-mobile';
 import PropTypes from 'prop-types';
 
 class AvaterSelector extends Component {
-  static propTypes = {
-    getAvater: PropTypes.func
-  }
 
   constructor(props) {
     super(props);
@@ -50,6 +47,10 @@ class AvaterSelector extends Component {
       </div>
     )
   }
+}
+
+AvaterSelector.propTypes = {
+  getAvater: PropTypes.func
 }
 
 export default AvaterSelector;

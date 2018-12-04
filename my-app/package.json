@@ -110,5 +110,8 @@
   "eslintConfig": {
     "extends": "react-app"
   },
-  "proxy": "http://localhost:5656"
+  "proxy": "http://localhost:5656",
+  "devDependencies": {
+    "prop-types": "^15.6.2"
+  }
 }
