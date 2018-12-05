@@ -5,6 +5,7 @@ import { getRedirectPath } from '../unit';
 const AUTH_SUCCESS = 'AUTH_SUCCESS';
 const FAIL = 'FAIL';
 const LOAD_DATA = 'LOAD_DATA';
+const LOGOUT = 'LOGOUT';
 
 const initState = {
   account: '',
@@ -25,6 +26,9 @@ export function user(state = initState, action) {
     }
     case 'FAIL': {
       return { ...state, msg: action.msg };
+    }
+    case 'LOGOUT': {
+      return { ...initState, redirectTo: '/login' }
     }
     default: return state;
   }
@@ -73,6 +77,10 @@ export function complete(userInfo) {
     .then(reply => {
       dispatch(autoHandle(reply.data.results));
     });
+}
+
+export function logout() {
+  return { type: LOGOUT }
 }
 
 export function loadData(userInfo) {

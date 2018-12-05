@@ -20,4 +20,8 @@ router.post('/', function (req, res) {
     })
 });
 
+router.post('/logout', function (req, res) {
+  res.json({code: 0});
+});
+
 module.exports = router;

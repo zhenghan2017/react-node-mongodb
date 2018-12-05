@@ -56,7 +56,6 @@ class DashBoard extends Component {
             }
           </Switch>
         </div>
-
         <NavLinkBar navList={navList}></NavLinkBar>
       </div>
     );

@@ -9,8 +9,6 @@ import reducers from './reducer';
 import './axios/interceptors';
 import Login from './container/login/login';
 import Register from './container/register/register';
-import Boss from './container/boss/boss';
-import Genius from './container/genius/genius';
 import NotFound from './container/not_found/not_found';
 import Error from './container/error/error';
 // import AuthAccess from './component/auth_access/auth_access';

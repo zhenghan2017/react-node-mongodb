@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import { TabBar } from 'antd-mobile';
-import './navlink.css';
 import PropTypes from 'prop-types';
+import './navlink.css';
+
 @withRouter
 class NavLinkBar extends Component {
   render() {
