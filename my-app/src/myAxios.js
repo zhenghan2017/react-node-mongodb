@@ -6,7 +6,8 @@ export default function myAxios(method, url, data = {}) {
     method: method,
     url: url,
     data: data,
-    headers: { "content-type": "application/json" }
+    headers: { "content-type": "application/json" },
+    timeout: 3000
   };
   return axios(options)
     .then(function (res) {
@@ -23,6 +24,13 @@ export default function myAxios(method, url, data = {}) {
       }
     })
     .catch(function (err) {
+      if (err && err.request) {
+        const str = err + '';
+        if (str.search('timeout') !== -1) {
+          Toast.offline('请求超时，请检查您的网络连接是否正常', 2);
+          return new Promise(() => { });
+        }
+      }
       if (err && err.response) {
         switch (err.response.status) {
           case 404: {
