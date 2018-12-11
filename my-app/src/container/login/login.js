@@ -3,6 +3,7 @@ import { List, InputItem, WhiteSpace, Button } from 'antd-mobile';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import { login } from '../../redux/user.redux';
+import PropTypes from 'prop-types';
 import Logo from '../../component/logo/logo';
 import formWrapper from '../../component/form_wrapper/form_wrapper';
 @connect(
@@ -16,6 +17,10 @@ class Login extends Component {
     this.toRegister = this.toRegister.bind(this);
     this.loginHandle = this.loginHandle.bind(this);
   }
+
+  static propTypes = {
+    changeHandle: PropTypes.func
+  };
 
   toRegister() {
     this.props.history.push('/register');

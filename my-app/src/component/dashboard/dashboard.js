@@ -17,6 +17,9 @@ class DashBoard extends Component {
   // constructor(props) {
   //   super(props);
   // }
+  static propTypes = {
+    user: PropTypes.object,
+  };
 
   render() {
     const { pathname } = this.props.location;
@@ -61,9 +64,5 @@ class DashBoard extends Component {
     );
   }
 }
-
-DashBoard.propTypes = {
-  user: PropTypes.object,
-};
 
 export default DashBoard;

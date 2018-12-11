@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function formWrapper(Comp) {
   return class FormWrapper extends React.Component {
-    constructor (props) {
+    constructor(props) {
       super(props);
       this.state = {};
       this.changeHandle = this.changeHandle.bind(this);

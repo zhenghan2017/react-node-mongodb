@@ -6,6 +6,11 @@ import './navlink.css';
 
 @withRouter
 class NavLinkBar extends Component {
+
+  static propTypes = {
+    navList: PropTypes.array
+  };
+
   render() {
     const { pathname } = this.props.location;
     const navList = this.props.navList.filter(v => !v.hide);
@@ -35,9 +40,5 @@ class NavLinkBar extends Component {
     );
   }
 }
-
-NavLinkBar.propTypes = {
-  navList: PropTypes.array
-};
 
 export default NavLinkBar;

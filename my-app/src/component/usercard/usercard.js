@@ -2,6 +2,11 @@ import React, { Component } from 'react';
 import { Card, WhiteSpace } from 'antd-mobile';
 import PropTypes from 'prop-types';
 class UserCard extends Component {
+
+  static propTypes = {
+    userList: PropTypes.array
+  };
+
   render() {
     const Header = Card.Header;
     const Body = Card.Body;
@@ -39,9 +44,5 @@ class UserCard extends Component {
     );
   }
 }
-
-UserCard.propTypes = {
-  userList: PropTypes.array
-};
 
 export default UserCard;

@@ -14,6 +14,10 @@ class Self extends Component {
     this.logoutHandler = this.logoutHandler.bind(this);
   }
 
+  static propTypes = {
+    user: PropTypes.object
+  };
+
   logoutHandler() {
     const alert = Modal.alert;
     alert('注销', '确认退出吗？', [
@@ -50,10 +54,6 @@ class Self extends Component {
       </div>
     );
   }
-};
-
-Self.propTypes = {
-  user: PropTypes.object
 };
 
 export default Self;

@@ -35,15 +35,15 @@ export default function myAxios(method, url, data = {}) {
         switch (err.response.status) {
           case 404: {
             // 渲染404页面
-            window.location.href = '/notFound'
+            window.location.href = '/notFound';
             break;
           }
           case 500: {
             // 渲染错误页面
-            window.location.href = '/error'
+            window.location.href = '/error';
             break;
           }
-          default: window.location.href = '/'
+          default: window.location.href = '/';
         }
         return new Promise(() => { });
       } else if (err && err === 'break') {

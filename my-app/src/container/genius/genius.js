@@ -10,6 +10,10 @@ import UserCard from '../../component/usercard/usercard';
 )
 class Genius extends Component {
 
+  static propTypes = {
+    userList: PropTypes.array
+  };
+
   componentDidMount() {
     this.props.getCharList('boss');
   }
@@ -17,10 +21,6 @@ class Genius extends Component {
   render() {
     return <UserCard userList={this.props.userList}></UserCard>
   }
-};
-
-Genius.propTypes = {
-  userList: PropTypes.array
 };
 
 export default Genius;
