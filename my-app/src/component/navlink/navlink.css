@@ -1,5 +1,12 @@
 .am-tab-bar {
   position: fixed;
+  height: 100px;
   bottom: 0;
+  width: 100%
+}
+
+.fixed-header .am-navbar {
+  position: fixed;
+  top: 0;
   width: 100%
 }

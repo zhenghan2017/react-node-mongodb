@@ -19,7 +19,14 @@ const models = {
     'company': { 'type': String },
     'money': { 'type': String }
   },
-  Chat: {}
+  Chat: {
+    'char_id': { 'type': String, 'require': true },
+    'from': { 'type': String, 'require': true },
+    'to': { 'type': String, 'require': true },
+    'content': { 'type': String, 'require': true, default: '' },
+    'creat_time': { 'type': Number, default: new Date().getTime() },
+    'read': { 'type': Boolean, require: true, default: false }
+  }
 };
 
 for (let m in models) {

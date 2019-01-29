@@ -8,6 +8,7 @@ import Msg from '../../container/msg/msg';
 import Self from '../../container/self/self';
 import NavLinkBar from '../navlink/navlink';
 import PropTypes from 'prop-types';
+import '../navlink/navlink.css'
 @withRouter
 @connect(
   state => state,
@@ -49,8 +50,8 @@ class DashBoard extends Component {
     }];
     return (
       <div>
-        <NavBar mode="dark">{navList.find(v => v.path === pathname).title}</NavBar>
-        <div>
+        <NavBar className='fixed-header' mode="dark">{navList.find(v => pathname.includes(v.path)).title}</NavBar>
+        <div style={{ marginTop: 20 }}>
           <Switch>
             {
               navList.map(v => (

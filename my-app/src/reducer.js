@@ -1,5 +1,6 @@
 import { combineReducers } from 'redux';
 import { user } from './redux/user.redux';
-import { charList } from './redux/chatlist.redux';
+import { charList } from './redux/charlist.redux'; 
+import { chat } from './redux/chat.redux'
 
-export default combineReducers({ user, charList });
+export default combineReducers({ user, charList, chat });

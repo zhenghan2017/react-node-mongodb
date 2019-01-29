@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
-import {getCharList} from '../../redux/chatlist.redux';
+import {getCharList} from '../../redux/charlist.redux';
 import PropTypes from 'prop-types';
 import UserCard from '../../component/usercard/usercard';
 

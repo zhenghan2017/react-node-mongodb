@@ -20,6 +20,7 @@ class NavLinkBar extends Component {
           {
             navList.map(v => (
               <TabBar.Item
+                style={{zIndex: -999}}
                 key={v.path}
                 title={v.title}
                 icon={

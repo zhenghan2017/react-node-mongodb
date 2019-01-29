@@ -21,7 +21,16 @@ app.set('port', port);
  */
 
 const server = http.createServer(app);
+const io = require('socket.io')(server);
 console.log(`server start on ${port}`);
+
+io.on('connection', function(socket) {
+  // console.log(`user login`);
+  socket.on('sendMsg', function(data) {
+    // console.log(data);
+    io.emit('recvMsg', data);
+  })
+});
 
 /**
  * Listen on provided port, on all network interfaces.

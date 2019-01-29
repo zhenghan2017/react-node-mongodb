@@ -3,6 +3,7 @@ const router = express.Router();
 const base = require('../../public/handler/base');
 const models = require('../../public/util/mongoose');
 const User = models.getModel('User');
+const Chat = models.getModel('Chat');
 const _filter = { pwd: 0, __v: 0 };
 
 router.route('/')
@@ -37,7 +38,7 @@ router.route('/')
       .catch(function (err) {
         res.json(err);
       })
-  })
+  });
 
 /**
  * 新增用户
@@ -62,6 +63,19 @@ router.post('/register', function (req, res) {
     .catch(function (err) {
       res.json(err);
     });
-})
+});
+
+/**
+ * 查找消息列表
+ */
+router.get('/msgList', function (req, res) {
+  const user = req.cookies.user;
+  // const filter = {'$or': [{from: user, to: user}]}
+  Chat.find({}, function(err, doc) {
+    if (!err) {
+      return res.json({code: 0, msg: doc});
+    }
+  });
+});
 
 module.exports = router;

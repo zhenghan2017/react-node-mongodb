@@ -1,11 +1,18 @@
 import React, { Component } from 'react';
 import { Card, WhiteSpace } from 'antd-mobile';
 import PropTypes from 'prop-types';
+import { withRouter } from 'react-router-dom'
+
+@withRouter
 class UserCard extends Component {
 
   static propTypes = {
     userList: PropTypes.array
   };
+
+  clickHandler(v) {
+    this.props.history.push(`/msg?${v._id}`);
+  }
 
   render() {
     const Header = Card.Header;
@@ -17,7 +24,10 @@ class UserCard extends Component {
             v.avatar
               ? (
                 <div key={v._id}>
-                  <Card key={v._id}>
+                  <Card
+                    key={v._id}
+                    onClick={() => this.clickHandler(v)}
+                  >
                     <Header
                       key={v._id}
                       title={v.title}
