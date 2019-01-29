@@ -38,7 +38,7 @@ class Self extends Component {
     return (
       <div style={{ position: "relative", zIndex: 999 }}>
         <Result
-          img={<img src={require(`../../component/avater_selector/img/${user.avater}.png`)} style={{ width: 60 }} alt="用户头像"></img>}
+          img={<img src={require(`../../component/avatar_selector/img/${user.avatar}.png`)} style={{ width: 60 }} alt="用户头像"></img>}
           title={`${user.account}`}
           message={user.type === 'boss' ? user.company : null}
         />

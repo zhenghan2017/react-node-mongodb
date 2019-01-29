@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { InputItem, WhiteSpace, TextareaItem, Button, NavBar } from 'antd-mobile';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom'
-import AvaterSelector from '../../component/avater_selector/avater_selector';
+import AvatarSelector from '../../component/avatar_selector/avatar_selector';
 import { complete } from '../../redux/user.redux'
 import formWrapper from '../../component/form_wrapper/form_wrapper';
 @connect(
@@ -27,7 +27,7 @@ class GeniusInfo extends Component {
       <div>
         {redirectTo && redirectTo !== currentPath ? <Redirect to={redirectTo} /> : null}
         <NavBar mode="dark">牛人完善页面</NavBar>
-        <AvaterSelector getAvater={avaterName => this.props.changeHandle('avater', avaterName)}></AvaterSelector>
+        <AvatarSelector getAvatar={avatarName => this.props.changeHandle('avatar', avatarName)}></AvatarSelector>
         <WhiteSpace />
         <InputItem onChange={v => this.props.changeHandle('jobTitle', v)}>求职岗位</InputItem>
         <WhiteSpace />

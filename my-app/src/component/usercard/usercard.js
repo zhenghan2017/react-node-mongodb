@@ -14,14 +14,14 @@ class UserCard extends Component {
       <div style={{ marginTop: 5 }}>
         {
           this.props.userList.map(v => (
-            v.avater
+            v.avatar
               ? (
                 <div key={v._id}>
                   <Card key={v._id}>
                     <Header
                       key={v._id}
                       title={v.title}
-                      thumb={require(`../../component/avater_selector/img/${v.avater}.png`)}
+                      thumb={require(`../../component/avatar_selector/img/${v.avatar}.png`)}
                       extra={<span>{v.jobTitle}</span>}
                     ></Header>
                     <Body>

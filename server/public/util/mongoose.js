@@ -4,7 +4,7 @@ mongoose.connect(dbUrl, { useNewUrlParser: true }, function (err) {
   if (err) {
     return console.log(err);
   }
-  console.log('connect mongodb successed');
+  console.log('connect mongodb succeed');
 });
 
 const models = {
@@ -14,7 +14,7 @@ const models = {
     'pwd': { 'type': String, 'require': true },
     'type': { 'type': String, 'require': true },
     'describe': { 'type': String },
-    'avater': { 'type': String },
+    'avatar': { 'type': String },
     'jobTitle': { 'type': String },
     'company': { 'type': String },
     'money': { 'type': String }

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { InputItem, WhiteSpace, TextareaItem, Button, NavBar } from 'antd-mobile';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom'
-import AvaterSelector from '../../component/avater_selector/avater_selector';
+import AvatarSelector from '../../component/avatar_selector/avatar_selector';
 import { complete } from '../../redux/user.redux'
 import formWrapper from '../../component/form_wrapper/form_wrapper';
 @connect(
@@ -26,7 +26,7 @@ class BossInfo extends Component {
       <div>
         {this.props.redirectTo && this.props.redirectTo !== currentPath ? <Redirect to={this.props.redirectTo} /> : null}
         <NavBar mode="dark">boss完善页面</NavBar>
-        <AvaterSelector getAvater={avaterName => this.props.changeHandle('avater', avaterName)}></AvaterSelector>
+        <AvatarSelector getAvatar={avatarName => this.props.changeHandle('avatar', avatarName)}></AvatarSelector>
         <WhiteSpace />
         <InputItem onChange={v => this.props.changeHandle('company', v)}>公司</InputItem>
         <WhiteSpace />
